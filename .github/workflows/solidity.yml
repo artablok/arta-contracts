@@ -14,8 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Solidity compiler
+      - name: Install dependencies
         run: |
+          sudo apt update
+          sudo apt install -y software-properties-common
           sudo add-apt-repository -y ppa:ethereum/ethereum
           sudo apt update
           sudo apt install -y solc
