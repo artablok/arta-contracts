@@ -1,3 +1,4 @@
+![Solidity Build](https://github.com/artablok/arta-contracts/actions/workflows/solidity.yml/badge.svg)
 # Arta Blockchain — Smart Contracts
 
 Official smart contract repository of the Arta Blockchain ecosystem.
