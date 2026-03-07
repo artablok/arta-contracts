@@ -9,22 +9,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y software-properties-common
-          sudo add-apt-repository -y ppa:ethereum/ethereum
-          sudo apt update
-          sudo apt install -y solc
-
-      - name: Show Solidity version
-        run: solc --version
-
-      - name: Compile contracts
-        run: |
-          solc contracts/*.sol
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+      
+    - name: Install Foundry
+      uses: foundry-rs/foundry-toolchain@v1
+      with:
+        version: nightly
+        
+    - name: Install dependencies
+      run: forge install OpenZeppelin/openzeppelin-contracts --no-commit
+      
+    - name: Build contracts
+      run: forge build
+      
+    - name: Run tests
+      run: forge test
