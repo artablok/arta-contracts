@@ -14,9 +14,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract USDTA is ERC20, Ownable {
 
     uint256 public constant MAX_SUPPLY = 10000000000 * 10**18;
-
-    constructor() ERC20("USDT.a", "USDT.a") {
-        _mint(msg.sender, MAX_SUPPLY);
-    }
+constructor() ERC20("USDT Arta", "USDT.a") Ownable(msg.sender) {
+    _mint(msg.sender, MAX_SUPPLY);
+}
 
 }
