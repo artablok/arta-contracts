@@ -66,3 +66,4 @@ Arta Blockchain infrastructure includes:
 ## License
 
 MIT License 
+Updated documentation – Arta Blockchain development.
