@@ -22,7 +22,7 @@ jobs:
         version: nightly
         
     - name: Install dependencies
-      run: forge install OpenZeppelin/openzeppelin-contracts --no-commit
+      run: forge install OpenZeppelin/openzeppelin-contracts --no-git
       
     - name: Build contracts
       run: forge build
