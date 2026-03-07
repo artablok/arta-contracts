@@ -14,10 +14,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract TINERTIA is ERC20, Ownable {
 
     uint256 public constant MAX_SUPPLY = 150000000000 * 10**18;
-
-    constructor() ERC20("TINERTIA", "TINERTIA") {
-        _mint(msg.sender, MAX_SUPPLY);
-    }
+constructor() ERC20("TINERTIA", "TINERTIA") Ownable(msg.sender) {
+    _mint(msg.sender, MAX_SUPPLY);
+}
 
     function burn(uint256 amount) public {
         _burn(msg.sender, amount);
